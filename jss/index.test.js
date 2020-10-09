@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-describe("Github login", () => {
+describe("Automationpracticelogin", () => {
 
     let browser;
     let page;
@@ -10,7 +10,7 @@ describe("Github login", () => {
             headless: false
         });
         page = await browser.newPage();
-        await page.goto("https://github.com/login", { waitUntil: "domcontentloaded" });
+        await page.goto("http://automationpractice.com/login", { waitUntil: "domcontentloaded" });
     });
 
     afterEach(async () => {
@@ -22,8 +22,8 @@ describe("Github login", () => {
         await browser.close();
     });
 
-    test("The title of the page should be Sign in to GitHub · GitHub", async () => {
-        const expectedPageTitle = "Sign in to GitHub · GitHub";
+    test("The title of the page should be Sign in to automationpractice . automationpractice", async () => {
+        const expectedPageTitle = "Sign in to automationpractice . automationpractice";
         const title = await page.title();
         expect(title).toBe(expectedPageTitle);
     });
